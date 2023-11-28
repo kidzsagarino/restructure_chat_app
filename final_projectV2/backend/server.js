@@ -69,7 +69,7 @@ app.post("/register", (req, res) =>{
 
     const { user_name, user_email, user_password } = req.body;
 
-    const sql = "INSERT INTO user(user_name, user_email, user_password) (?, ?, ?)";
+    const sql = "INSERT INTO user(user_name, user_email, user_password) VALUES(?, ?, ?)";
 
     con.query(sql, [user_name, user_email, user_password], (err, result) =>{
 
